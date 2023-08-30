@@ -15,9 +15,7 @@ window.onload = () => {
 
 window.addEventListener("DOMContentLoaded", (event) => {
   // Add Event Listeners
-  document.addEventListener("click", (e) => {
-    alert(`Wow it is ${e.target}, and this is ${e.currentTarget}`);;
-  });
+  document.addEventListener("click", replaceContent);
 });
 
 let container = document.getElementsByClassName("container")[0];
@@ -54,9 +52,9 @@ child1.appendChild(rect2Info);
 //     alert("I am container");
 // });
 
-child1.addEventListener("click", (e) => {
-    alert(`I am ${e.target}, and this is ${e.currentTarget}`);
-});
+// child1.addEventListener("click", (e) => {
+//     alert(`I am ${e.target}, and this is ${e.currentTarget}`);
+// });
 
 // child2.addEventListener("click", () => {
 //     alert("I am child 2");
