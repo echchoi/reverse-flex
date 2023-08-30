@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-flow: column-reverse nowrap;
+
+    background-color: gray;
+    width: 100vw;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    height: 100dvh;
+    align-items: center;
+    overflow-y: hidden;
+    padding-left: calc(env(safe-area-inset-left));
+    padding-right: calc(env(safe-area-inset-right));
+}
+
+.container > div + div {
+    margin-bottom: 1rem;
+    margin-right: 0;
+}
+
+.child1 {
+    width: 96%;
+    /* height: 100px; */
+    background-color: teal;
+    padding-left: 1rem; 
+    padding-right: 1rem;
+
+    flex: 1 1 0;
+}
+
+.child2 {
+    width: 96%;
+    padding: 1rem;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    background-color: goldenrod;
+    
+    flex: 6 1 0;
+
+    cursor: pointer;
+}
+
+.child2 p {
+    font-size: 24px;
+}
+
+.child2 > p::before {
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+
+    content: "\f06a";
+    font: var(--fa-font-solid);
+    font-size:  1.2rem;
+    color: red;
+    margin-inline-end: 4px;
+}
+
+.child2 p { 
+    display: inline;
+}
+
+
+#new {
+    width: 100px;
+    height: 100px;
+    background: green;
+}
+
+@media (orientation: landscape) {
+    .container {
+        flex-flow: row-reverse nowrap;
+        align-items: stretch;
+        margin-top: env(safe-area-inset-top);
+    }
+
+    .container > div + div {
+        margin-right: 1rem;
+        margin-bottom: 0;
+    }
+
+    .child2 {
+        flex: 3 1 0;
+    }
+}
